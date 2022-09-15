@@ -10,7 +10,7 @@ def screenshot(window_title=None):
             x, y = win32gui.ClientToScreen(hwnd, (x, y))
             x1, y1 = win32gui.ClientToScreen(hwnd, (x1 - x, y1 - y))
             im = pyautogui.screenshot(region=(x, y, x1, y1))
-            return im
+            return im, (x, y)
         else:
             print('Window not found!')
     else:
